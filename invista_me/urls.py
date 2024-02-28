@@ -28,8 +28,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='usuarios/login.html'), name = 'login'),
     #botão de logout
     path('logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name = 'logout'),
-    #pagina inicial
-    path('',views.pagina_inicial),
     #pagina de contato
     path('contato/',views.contato, name='contato'),
     #pagina minha historia
@@ -37,7 +35,7 @@ urlpatterns = [
     #pagina para criar um novo investimento
     path('novo_investimento/',views.criar, name='novo_investimento'),
     #botão de novo investimento da lista de investimentos
-    path('investimentos/',views.investimentos, name='investimentos'),
+    path('',views.investimentos, name='investimentos'),
     #botão detalhe da lista de investimento
     path('investimentos/<int:id_investimento>',views.detalhe, name='detalhe'),
     #botão editar da lista de investimento
